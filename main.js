@@ -3,9 +3,26 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+const div = document.querySelector('#modal');
+div.className = "hidden";
 
+function likeButtons(hearts){
 
+  const spans = document.querySelectorAll("span.like-glyph")
+  const button = document.createElement('button');
+  button.className = "like-glyph";
+  button.textContent = EMPTY_HEART;
 
+  spans[0].parentNode.replaceChild(button, spans[0])
+
+  button.addEventListener('click', mimicServerCall);
+  //{
+  //button.textContent = FULL_HEART;
+  //}
+}
+const hearts = document.getElementsByTagName('button'[0]);
+likeButtons(hearts);
+mimicServerCall();
 
 //------------------------------------------------------------------------------
 // Don't change the code below: this function mocks the server response
